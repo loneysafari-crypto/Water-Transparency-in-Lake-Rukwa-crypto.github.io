@@ -65,12 +65,12 @@ body {
     background: #60a5fa;
 }
 
-/* ==================== HERO SECTION (Home Background) ==================== */
+/* ==================== HERO SECTION ==================== */
 .hero {
     height: 100vh;
     background-image: 
         linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-        url('D:/3 YEAR NOTES/GM 471 PRE DESSERTATION/Web_System/view.png');
+        url('view.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -83,33 +83,16 @@ body {
 }
 
 .hero-content {
-    max-width: 850px;
-    padding: 0 20px;
     position: relative;
     z-index: 2;
+    max-width: 850px;
+    padding: 0 20px;
 }
 
-.hero h1 {
-    font-size: 3.8rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
-}
-
-.highlight {
-    color: #60a5fa;
-}
-
-.hero p {
-    font-size: 1.35rem;
-    margin-bottom: 2.5rem;
-    opacity: 0.95;
-}
-
-/* ==================== ABOUT PAGE STYLES ==================== */
-.about-section {
+/* ==================== ABOUT & GENERAL SECTIONS ==================== */
+.about-section, .section {
     padding: 100px 8%;
-    background: #f9f9f9;
-    min-height: 80vh;
+    min-height: 70vh;
 }
 
 .container {
@@ -117,6 +100,26 @@ body {
     margin: 0 auto;
 }
 
+.section h2 {
+    font-size: 2.6rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #1e3a8a;
+    position: relative;
+}
+
+.section h2::after {
+    content: '';
+    width: 90px;
+    height: 4px;
+    background: #60a5fa;
+    position: absolute;
+    bottom: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* ==================== PROFILE CARDS ==================== */
 .researcher-profile,
 .supervisor-profile {
     display: flex;
@@ -149,23 +152,60 @@ body {
     font-size: 1.05rem;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .researcher-profile,
-    .supervisor-profile {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-    }
-    
-    .profile-photo {
-        width: 180px;
-        height: 180px;
-    }
-    
-    .hero h1 {
-        font-size: 2.8rem;
-    }
+/* ==================== STEP CARDS (How to Use) ==================== */
+.how-to-use {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.step-card {
+    background: white;
+    padding: 28px 24px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    border-left: 6px solid #1e40af;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.step-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(30, 64, 175, 0.15);
+    border-left-color: #60a5fa;
+}
+
+.step-card h3 {
+    color: #1e40af;
+    font-size: 1.35rem;
+    margin-bottom: 12px;
+    padding-left: 8px;
+}
+
+.step-card p {
+    color: #334155;
+    line-height: 1.7;
+    font-size: 1.02rem;
+}
+
+/* Step Number */
+.step-card::before {
+    content: attr(data-step);
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    background: #1e40af;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 10px rgba(30, 64, 175, 0.3);
 }
 
 /* ==================== BUTTONS ==================== */
@@ -189,32 +229,7 @@ body {
     box-shadow: 0 10px 25px rgba(30, 64, 175, 0.4);
 }
 
-/* ==================== OTHER SECTIONS ==================== */
-.section {
-    padding: 100px 8%;
-    min-height: 70vh;
-}
-
-.section h2 {
-    font-size: 2.6rem;
-    text-align: center;
-    margin-bottom: 3rem;
-    color: #1e3a8a;
-    position: relative;
-}
-
-.section h2::after {
-    content: '';
-    width: 90px;
-    height: 4px;
-    background: #60a5fa;
-    position: absolute;
-    bottom: -14px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-/* Forms, Comments, Footer (your original styles) */
+/* ==================== FORM STYLES (for Contact page) ==================== */
 form {
     max-width: 700px;
     margin: 0 auto;
@@ -237,61 +252,7 @@ input:focus, textarea:focus {
     box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
 }
 
-button[type="submit"] {
-    background: #1e40af;
-    color: white;
-    padding: 16px;
-    border: none;
-    border-radius: 10px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    font-weight: 600;
-}
-
-button[type="submit"]:hover {
-    background: #1e3a8a;
-}
-
-.comment-card {
-    background: white;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-}
-
-.comment-card:hover {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    transform: translateY(-3px);
-}
-
-.comment-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid #f1f5f9;
-}
-
-.comment-header strong {
-    color: #1e40af;
-    font-size: 1.1rem;
-}
-
-.comment-header small {
-    color: #64748b;
-    font-size: 0.9rem;
-}
-
-.comment-message {
-    color: #334155;
-    line-height: 1.7;
-    font-size: 1.02rem;
-}
-
+/* Footer */
 footer {
     background: #1e3a8a;
     color: white;
@@ -300,13 +261,30 @@ footer {
     margin-top: 3rem;
 }
 
-/* Responsive */
+/* ==================== RESPONSIVE ==================== */
 @media (max-width: 768px) {
     .navbar ul {
         gap: 1rem;
         font-size: 0.95rem;
     }
-    .section {
+    
+    .section, .about-section {
         padding: 80px 5%;
+    }
+    
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    .researcher-profile,
+    .supervisor-profile {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .profile-photo {
+        width: 180px;
+        height: 180px;
     }
 }
