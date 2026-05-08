@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comments - Lake Rukwa Monitor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo"> Lake Rukwa Monitor</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="app.html">Earth Engine App</a></li>
+      <li><a href="download.html">Download</a></li>
+      <li><a href="comments.html" class="active">Comments</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="section">
+    <h2>Share Your Feedback</h2>
+    
+    <form id="commentForm">
+      <input type="text" id="name" placeholder="Your Full Name" required>
+      <input type="email" id="email" placeholder="Email Address (optional)">
+      <textarea id="message" rows="6" placeholder="Write your comments, suggestions, or questions here..." required></textarea>
+      <button type="submit">Submit Feedback</button>
+    </form>
+
+    <h3 style="margin-top: 4rem; text-align: center;">Recent Comments</h3>
+    <div id="commentsList" style="max-width: 900px; margin: 2rem auto;"></div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Lake Rukwa Earth Monitor | Dar es Salaam, Tanzania</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
