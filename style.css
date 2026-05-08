@@ -70,7 +70,7 @@ body {
     height: 100vh;
     background-image: 
         linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-        url('D:/3 YEAR NOTES/GM 471 PRE DESSERTATION/Web_System/assets/view.png');   /*  */
+        url('D:/3 YEAR NOTES/GM 471 PRE DESSERTATION/Web_System/view.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
