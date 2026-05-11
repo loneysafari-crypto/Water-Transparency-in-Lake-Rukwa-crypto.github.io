@@ -5,17 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us - Lake Rukwa Monitor</title>
   <link rel="stylesheet" href="style.css">
+  
+  <!-- EmailJS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
 
   <nav class="navbar">
-    <div class="logo">🌊 Lake Rukwa Monitor</div>
+    <div class="logo">Lake Rukwa Monitor</div>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="app.html">Earth Engine App</a></li>
       <li><a href="download.html">Download</a></li>
-      <li><a href="comments.html">Comments</a></li>
       <li><a href="contact.html" class="active">Contact</a></li>
     </ul>
   </nav>
@@ -33,13 +35,15 @@
         <input type="email" id="cemail" placeholder="Email Address" required>
         <input type="text" id="csubject" placeholder="Subject" required>
         <textarea id="cmessage" rows="6" placeholder="Your Message..." required></textarea>
-        <button type="submit">Send Message</button>
+        <button type="submit" id="submitBtn">Send Message</button>
       </form>
+
+      <p id="statusMessage" style="text-align:center; margin-top: 1rem; font-weight:500;"></p>
     </div>
 
     <div style="max-width: 700px; margin: 4rem auto; text-align: center;">
       <h3>Other Ways to Reach Us</h3>
-      <p><strong>Email:</strong> loney.safari@gmail.com</p>
+      <p><strong>Email:</strong> loneysafari@gmail.com</p>
       <p><strong>Location:</strong> Dar es Salaam, Tanzania</p>
     </div>
   </section>
@@ -48,6 +52,48 @@
     <p>&copy; 2026 Lake Rukwa Earth Monitor | Dar es Salaam, Tanzania</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // Initialize EmailJS (Replace with your own keys)
+    (function() {
+      emailjs.init({
+        publicKey: "YOUR_PUBLIC_KEY_HERE",   // ← Change this
+      });
+    })();
+
+    const form = document.getElementById('contactForm');
+    const statusMessage = document.getElementById('statusMessage');
+    const submitBtn = document.getElementById('submitBtn');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      submitBtn.innerHTML = "Sending...";
+      submitBtn.disabled = true;
+
+      const templateParams = {
+        from_name: document.getElementById('cname').value,
+        from_email: document.getElementById('cemail').value,
+        subject: document.getElementById('csubject').value,
+        message: document.getElementById('cmessage').value,
+        to_email: "loney.safari@gmail.com"
+      };
+
+      emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+        .then(() => {
+          statusMessage.style.color = "green";
+          statusMessage.textContent = "✅ Message sent successfully! We'll reply soon.";
+          form.reset();
+        })
+        .catch((error) => {
+          statusMessage.style.color = "red";
+          statusMessage.textContent = "❌ Failed to send. Please try again later.";
+          console.error('EmailJS error:', error);
+        })
+        .finally(() => {
+          submitBtn.innerHTML = "Send Message";
+          submitBtn.disabled = false;
+        });
+    });
+  </script>
 </body>
 </html>
