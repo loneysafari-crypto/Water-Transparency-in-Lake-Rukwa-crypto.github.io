@@ -8,77 +8,15 @@
   
   <!-- EmailJS CDN -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-  <style>
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 5%;
-      background: linear-gradient(135deg, #0a4d8c, #1e7fd6);
-      color: white;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .nav-logo {
-      height: 58px;
-      width: auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-      transition: transform 0.3s ease;
-    }
-
-    .nav-logo:hover {
-      transform: scale(1.05);
-    }
-
-    .logo-text {
-      line-height: 1.2;
-    }
-
-    .navbar ul {
-      display: flex;
-      list-style: none;
-      gap: 25px;
-      margin: 0;
-      padding: 0;
-    }
-
-    .navbar a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: all 0.3s;
-    }
-
-    .navbar a:hover {
-      color: #ffd700;
-      transform: translateY(-2px);
-    }
-
-    .navbar .active {
-      color: #ffd700;
-      border-bottom: 3px solid #ffd700;
-      padding-bottom: 5px;
-    }
-  </style>
 </head>
 <body>
 
   <nav class="navbar">
     <div class="logo">
-      <!-- Put your logo file in the same folder and name it logo.png -->
       <img src="logo.png" alt="Lake Rukwa Monitor Logo" class="nav-logo">
-      
       <div class="logo-text">
         <strong>Location Map</strong><br>
-        <span style="font-size: 1.05rem; font-weight: normal;">Lake Rukwa Water Transparency Monitor</span>
+        <span>Lake Rukwa Water Transparency Monitor</span>
       </div>
     </div>
     
@@ -87,16 +25,15 @@
       <li><a href="about.html">About</a></li>
       <li><a href="app.html">Earth Engine App</a></li>
       <li><a href="download.html">Download</a></li>
-      <li><a href="comments.html">Comments</a></li>
       <li><a href="contact.html" class="active">Contact</a></li>
     </ul>
   </nav>
 
-  <section class="section">
+  <section class="contact-section">
     <h2>Contact Us</h2>
     
-    <div style="max-width: 700px; margin: 0 auto;">
-      <p style="text-align: center; margin-bottom: 3rem; font-size: 1.1rem;">
+    <div class="contact-container">
+      <p class="intro-text">
         Have questions, suggestions, or want to collaborate? Feel free to reach out!
       </p>
 
@@ -108,10 +45,10 @@
         <button type="submit" id="submitBtn">Send Message</button>
       </form>
 
-      <p id="statusMessage" style="text-align:center; margin-top: 1rem; font-weight:500;"></p>
+      <p id="statusMessage"></p>
     </div>
 
-    <div style="max-width: 700px; margin: 4rem auto; text-align: center;">
+    <div class="other-contact">
       <h3>Other Ways to Reach Us</h3>
       <p><strong>Email:</strong> loneysafari@gmail.com</p>
       <p><strong>Location:</strong> Dar es Salaam, Tanzania</p>
@@ -123,9 +60,7 @@
   </footer>
 
   <script>
-    emailjs.init({
-      publicKey: "K4GoRn7m52-bkNrNS",
-    });
+    emailjs.init({ publicKey: "K4GoRn7m52-bkNrNS" });
 
     const form = document.getElementById('contactForm');
     const statusMessage = document.getElementById('statusMessage');
