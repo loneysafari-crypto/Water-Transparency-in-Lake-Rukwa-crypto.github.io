@@ -76,7 +76,7 @@
         reply_to: document.getElementById('cemail').value
       };
 
-      emailjs.send('service_72szg4r', 'template_fph432u', templateParams)
+     emailjs.send('service_72szg4r', 'template_fph432u', templateParams)
         .then(() => {
           statusMessage.style.color = "green";
           statusMessage.textContent = "✅ Message sent successfully! We'll reply soon.";
