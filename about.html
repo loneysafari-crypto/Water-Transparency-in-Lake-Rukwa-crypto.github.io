@@ -22,42 +22,49 @@
     <div class="container">
 
       <h2>About the Project</h2>
-      
+
       <div class="project-description">
-        <p><strong>Lake Rukwa Monitor</strong> is an advanced environmental monitoring platform that utilizes Google Earth Engine to track changes in Lake Rukwa, one of Tanzania’s important wetlands.</p>
-        
+        <p><strong>Lake Rukwa Monitor</strong> is a cloud-based environmental monitoring platform that uses satellite remote sensing to track water transparency in Lake Rukwa, one of Tanzania's most important wetlands. Built on Google Earth Engine, it turns complex satellite data into clear, accessible insights for researchers, water managers, and decision-makers.</p>
+
         <h3>Our Mission</h3>
-        <p>We aim to provide accurate, real-time, and accessible satellite-based data to support sustainable management of Lake Rukwa’s water resources, biodiversity, and surrounding ecosystems.</p>
+        <p>Our mission is to develop an efficient, user-friendly system for computing and monitoring water transparency in Lake Rukwa using remote sensing and geospatial technologies &mdash; providing accurate, timely, and spatially distributed information that supports environmental monitoring, water resource management, research, and sustainable decision-making.</p>
+        <p>By integrating Sentinel-2 satellite imagery, geospatial analysis, and web mapping technologies, the platform gives users an interactive way to visualize, analyze, and track changes in water transparency over time, without the cost and limitations of traditional field-based monitoring.</p>
 
         <h3>What We Monitor</h3>
-        <ul>
-          <li>Our Mission
-
-Our mission is to develop an efficient and user-friendly web-based system for computing and monitoring water transparency in Lake Rukwa using remote sensing and geospatial technologies. The system aims to provide accurate, timely, and spatially distributed information on water transparency to support environmental monitoring, water resource management, research, and sustainable decision-making.
-
-By integrating Sentinel-2 satellite imagery, geospatial analysis, and web mapping technologies, the project seeks to improve access to water quality information through an interactive platform that allows users to visualize, analyze, and monitor changes in water transparency over time. The system is designed to reduce the limitations of traditional field-based monitoring methods, which are often costly, time-consuming, and spatially limited.
-
-In addition, the project promotes the application of Geographic Information Systems (GIS), remote sensing, and web technologies in addressing environmental challenges and supporting sustainable management of inland water ecosystems in Tanzania.
-</li>
-        </ul>
+        <p>The system tracks <strong>water transparency</strong>, measured as Secchi Disk Depth (ZSD) &mdash; a key indicator of aquatic ecosystem health that reflects light penetration, primary productivity, and overall water quality. It also captures spatial and seasonal patterns of turbidity and sediment distribution across the lake.</p>
 
         <h3>Technology</h3>
-        <p>This project is powered by <strong>Google Earth Engine</strong>, using multi-temporal satellite imagery from Sentinel-2 Level 2.</p>
+        <p>The platform is powered by <strong>Google Earth Engine</strong>, processing multi-temporal <strong>Sentinel-2 Level-2A Surface Reflectance imagery from 2017 to 2025</strong>. It applies the <strong>Msusa22 semi-analytical algorithm</strong>, alongside QAA_V5, QAA_TM, QAA_T754, and QAA_T865 models, to classify optical water types and estimate ZSD. Results are delivered through an interactive Web GIS interface built with the Leaflet JavaScript library, requiring no specialized software or technical training to use.</p>
       </div>
 
       <!-- Scientific Background -->
       <h2>Scientific Background</h2>
       <div class="scientific-background">
         <p>Water transparency is widely recognized as a key indicator of aquatic ecosystem health because it directly controls light penetration, which in turn affects photosynthesis, primary productivity, and overall water quality (Kirk, 2011).</p>
-        
+
         <p>It is commonly measured using Secchi Disk Depth (SDD) or indirectly estimated from turbidity and the optical properties of water. In Lake Rukwa, an endorheic lake located in southwestern Tanzania, recent observations suggest a noticeable decline in water transparency, largely associated with increased sediment inflow, nutrient enrichment, and intensified human activities within the catchment (Mshana, 2015; Lake Rukwa Basin Water Board, 2020).</p>
-        
+
         <p>The deterioration of water transparency is strongly linked to land use and land cover changes, including deforestation, agricultural expansion, and small-scale mining activities. These activities increase soil erosion and surface runoff, leading to higher concentrations of suspended sediments entering the lake (FAO, 2015; Wang et al., 2011).</p>
-        
+
+        <p>Because Lake Rukwa is endorheic, sediment accumulates within the basin rather than flushing out, making it especially vulnerable to long-term degradation.</p>
+
         <p>Traditional field-based methods such as Secchi disk measurements are labor-intensive and provide limited spatial and temporal coverage. This creates a significant data gap for effective management.</p>
-        
+
         <p>This project addresses these challenges by developing a web-based system that integrates remote sensing data, geospatial analysis, and predictive modeling to deliver near real-time information on water transparency in Lake Rukwa, supporting better decision-making and sustainable management of this vital ecosystem.</p>
       </div>
+
+      <!-- Key Findings -->
+      <h2>Key Findings</h2>
+      <div class="key-findings">
+        <p>Analysis of imagery from 2017&ndash;2025 shows Lake Rukwa is predominantly composed of <strong>Type III and Type IV turbid waters</strong>, with ZSD values ranging from <strong>0.060 m to 0.308 m</strong> (mean 0.126 m), following consistent seasonal and spatial patterns linked to the lake's sediment-retaining, endorheic nature. These results confirm the platform's value in identifying degraded zones for targeted management action.</p>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
+
 
       <!-- Researcher Profile -->
 <div class="researcher-profile">
